@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c1ec1ff677.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">PortfolioPro</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Moshood Oladega</span></h1>
+            <div class="typewriter">
+                <span class="text">I'm a </span>
+                <span class="dynamic-text"></span>
+            </div>
+            <a href="#projects" class="btn">Explore My Work</a>
+        </div>
+        <div class="hero-icons">
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-palette"></i>
+            <i class="fa-solid fa-rocket"></i>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I’m a passionate web developer with a love for creating beautiful and functional websites. My journey started with a curiosity about how websites work, and it has since evolved into a career where I get to build amazing digital experiences every day.
+        </p>
+        <p>
+            I specialize in front-end and back-end development, ensuring that every project I work on is both visually appealing and highly functional. When I’m not coding, I enjoy hiking, photography, and experimenting with new recipes in the kitchen.
+        </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-commerce Platform</h3>
+                <p>A fully functional e-commerce site with payment integration and user authentication.</p>
+            </div>
+            <div class="project-card">
+                <h3>Blog System</h3>
+                <p>A dynamic blog platform with real-time updates and a user-friendly interface.</p>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A responsive portfolio site showcasing my skills and projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-form">
+            <form id="contactForm" onsubmit="return handleSubmit()">
+                <div class="form-group">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <i class="fa-regular fa-message"></i>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PortfolioPro. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Typewriter Effect
+        const dynamicText = document.querySelector(".dynamic-text");
+        const texts = ["Web Developer", "Designer", "Problem Solver"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                dynamicText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+            } else {
+                dynamicText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                }
+            }
+            setTimeout(type, isDeleting ? 100 : 200);
+        }
+
+        type();
+
+        // Dark/Light Mode Toggle
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+            const themeToggle = document.querySelector(".theme-toggle");
+            themeToggle.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
+        }
+    </script>
+</body>
+</html>

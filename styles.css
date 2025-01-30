@@ -1,0 +1,244 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff; /* White background */
+    color: #121212; /* Dark text */
+    transition: background 0.5s, color 0.5s;
+}
+
+header {
+    background: #ffffff;
+    color: #121212;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6a1b9a; /* Purple logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #121212;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6a1b9a; /* Purple hover */
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #121212;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+    background: #009688; /* Teal background */
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 48px;
+    color: #ffffff; /* White text */
+}
+
+.highlight {
+    color: #6a1b9a; /* Purple highlight */
+}
+
+.typewriter {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #ffffff; /* White text */
+}
+
+.dynamic-text {
+    color: #6a1b9a; /* Purple dynamic text */
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #6a1b9a; /* Purple button */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #4a148c; /* Darker purple on hover */
+}
+
+.hero-icons {
+    margin-top: 50px;
+}
+
+.hero-icons i {
+    font-size: 48px;
+    margin: 0 20px;
+    color: #ffffff; /* White icons */
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background: #ffffff; /* White background */
+    color: #121212; /* Dark text */
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 20px;
+    background: #009688; /* Teal background */
+    color: #ffffff; /* White text */
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #ffffff; /* White cards */
+    color: #121212; /* Dark text */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background: #ffffff; /* White background */
+    color: #121212; /* Dark text */
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group i {
+    margin-right: 10px;
+    color: #6a1b9a; /* Purple icons */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #121212;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff; /* White background */
+    color: #121212; /* Dark text */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode header {
+    background: #1e1e1e; /* Dark header */
+    color: #ffffff;
+}
+
+body.dark-mode nav ul li a {
+    color: #ffffff;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #6a1b9a; /* Purple hover */
+}
+
+body.dark-mode .theme-toggle {
+    color: #ffffff;
+}
+
+body.dark-mode #hero {
+    background: #00796b; /* Darker teal */
+}
+
+body.dark-mode #about {
+    background: #1e1e1e; /* Dark background */
+    color: #ffffff;
+}
+
+body.dark-mode #projects {
+    background: #00796b; /* Darker teal */
+    color: #ffffff;
+}
+
+body.dark-mode #contact {
+    background: #1e1e1e; /* Dark background */
+    color: #ffffff;
+}
+
+body.dark-mode footer {
+    background: #1e1e1e; /* Dark background */
+    color: #ffffff;
+}
